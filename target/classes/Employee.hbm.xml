@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.deptemphiberxmlapp.model">
+    <class name="Employee" table="employee">
+        <id name="empId" column="emp_id">
+            <generator class="native"/>
+        </id>
+        <property name="empName" column="emp_name" />
+        <property name="mailId" column="mail_id" />
+        <property name="dateOfBirth" column="dob" />
+         <property name="mobileNo" column="mobile_no" type="long"/>
+         <property name="salary" column = "salary" type="float"/>
+         <property name="companyName" column = "company_name"/>
+        <many-to-one name="department" class="Department"
+            column="dept_emp_fk" not-null="true"/>
+    </class> 
+</hibernate-mapping>
